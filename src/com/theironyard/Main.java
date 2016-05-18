@@ -12,9 +12,7 @@ public class Main {
         Customer customer = new Customer();
 
         customer.greeting();
+        customer.menu();
         customer.input();
-
-
-
     }
 }
