@@ -13,7 +13,7 @@ public class Customer {
     double bal;
     HashMap<String, Double> account = new HashMap<>();
 
-    public void greeting() {
+    public void greeting() throws Exception {
         System.out.println("What is your name?");
 
         name = scanner.nextLine();
@@ -23,6 +23,9 @@ public class Customer {
             String amt = scanner.nextLine();
             bal = Double.valueOf(amt);
             account.put(name, bal);
+        }
+        else if (name == "/quit"){
+            throw new Exception("ATM Terminated.");
         }
         else {
             System.out.println("Hello " + name + ". How may I help you today?");
@@ -50,7 +53,7 @@ public class Customer {
                 amtD = Double.valueOf(amt);
 
                 if (amtD > bal) {
-                    throw new Exception("You and I both know you don't have that much money.");
+                    throw new Exception("You cant withdraw money you don't have.");
                 }
                 else if (amtD > 0.00) {
                     bal = bal- amtD;
