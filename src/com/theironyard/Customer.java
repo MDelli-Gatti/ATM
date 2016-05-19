@@ -24,13 +24,10 @@ public class Customer {
             bal = Double.valueOf(amt);
             account.put(name, bal);
         }
-        else if (name == "/quit"){
-            throw new Exception("ATM Terminated.");
-        }
         else {
             System.out.println("Hello " + name + ". How may I help you today?");
+            bal = account.get (name);
         }
-
     }
 
     public void input() throws Exception {
