@@ -18,7 +18,7 @@ public class Customer {
 
         name = scanner.nextLine();
         if (account.get (name) == null){
-            System.out.println("You were not recognized in our system. Let's create an accout...");
+            System.out.println("You were not recognized in our system. Let's create an account...");
             System.out.println("What is your starting balance?");
             String amt = scanner.nextLine();
             bal = Double.valueOf(amt);
@@ -54,7 +54,8 @@ public class Customer {
                 }
                 else if (amtD > 0.00) {
                     bal = bal- amtD;
-                    System.out.println("you have withdrawn $" + amt + ". Please take your money. Your new balance is $" + (bal) + ".");
+                    System.out.println("You have withdrawn $" + amt + ". Please take your money. Your new balance is $" + (bal) + ".");
+                    account.put(name, bal);
                 }
                 else {
                     System.out.println("We don't do deposits here.");
